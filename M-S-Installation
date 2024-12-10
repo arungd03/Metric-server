@@ -1,0 +1,14 @@
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+kubectl top nodes
+
+kubectl get deploy -n kube-system
+
+kubectl edit deploy metrics-server -n kube-system
+- --kubelet-i:nsecure-tls
+
+ kubectl top nodes
+NAME           CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
+controlplane   118m         11%    1165Mi          61%       
+node01         43m          4%     831Mi           44%   
+
